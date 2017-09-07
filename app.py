@@ -15,7 +15,7 @@ def teams():
     dot = League(dot, year)
     bob = League(bob, year)
     names = [team.team_name for team in dot.teams]
-    return jsonify(names)
-    
+    return names
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

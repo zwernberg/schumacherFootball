@@ -15,14 +15,14 @@
     <div class="container">
         <p>Dot Division</p>
       <ul>
-        {% for name in dot_names %}
-        <li>{{name}}</li>
+        {% for team in dot_teams %}
+        <li>{{team.owner}} - {{team.team_name}}</li>
         {% endfor %}
         </ul>
         <p>Bob Division</p>
         <ul>
-        {% for name in bob_names %}
-        <li>{{name}}</li>
+        {% for team in bob_teams %}
+        <li>{{team.owner}} - {{team.team_name}}</li>
         {% endfor %}
         </ul>
     </div>

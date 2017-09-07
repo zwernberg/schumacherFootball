@@ -14,9 +14,8 @@ def main():
 def teams():
     dot = League(dot_id, year)
     bob = League(bob_id, year)
-    dot_names = [team.team_name for team in dot.teams]
-    bob_names = [team.team_name for team in bob.teams]
-    return render_template('teams.html', bob_names = bob_names, dot_names = dot_names)
+
+    return render_template('teams.html', bob_teams = bob.teams, dot_teams = dot.teams)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

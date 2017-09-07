@@ -16,5 +16,5 @@ def teams():
     bob = League(bob, year)
     return (teams[0].team_name)
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     app.run(host='0.0.0.0')

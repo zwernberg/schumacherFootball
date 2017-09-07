@@ -13,17 +13,17 @@
   </head>
   <body>
     <div class="container">
-        <p>Dot Division</p>
+        <p> Matchups - Dot</p>
         <ul>
-            {% for team in dot.teams %}
-            <li>{{team.owner}} - {{team.team_name}}</li>
-            {% endfor %}
+        {% for matchup in dot_scoreboard %}
+        <li> {{matchup.home_team.team_name}}({{matchup.home_team.owner}}) {{matchup.home_score}} pts vs {{matchup.away_team.team_name}}({{matchup.away_team.owner}}) {{matchup.away_score}} pts </li>
+        {% endfor %}
         </ul>
-        <p>Bob Division</p>
+         <p> Matchups - Bob</p>
         <ul>
-            {% for team in bob.teams %}
-            <li>{{team.owner}} - {{team.team_name}}</li>
-            {% endfor %}
+        {% for matchup in bob_scoreboard %}
+        <li> {{matchup.home_team.team_name}}({{matchup.home_team.owner}}) {{matchup.home_score}} pts vs {{matchup.away_team.team_name}}({{matchup.away_team.owner}}) {{matchup.away_score}} pts </li>
+        {% endfor %}
         </ul>
     </div>
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>

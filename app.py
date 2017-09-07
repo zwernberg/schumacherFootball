@@ -11,8 +11,16 @@ year = 2017
 def main():
     dot = League(dot_id, year)
     bob = League(bob_id, year)
+    dot_scoreboard = dot.scoreboard()
+    bob_scoreboard = bob.scoreboard()
 
-    return render_template('teams.html', bob_teams = bob.teams, dot_teams = dot.teams)
+    return render_template('matchups.html', bob = bob, dot = dot, bob_scoreboard = bob_scoreboard, dot_scoreboard = dot_scoreboard)
 
+@app.route("/teams")
+def teams():
+    dot = League(dot_id, year)
+    bob = League(bob_id, year)
+
+    return render_template('teams.html', bob=bob, dot=dot)
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

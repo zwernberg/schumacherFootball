@@ -12,10 +12,10 @@ def main():
 
 @app.route("/teams")
 def teams():
-    dot = League(dot, year)
-    bob = League(bob, year)
+    dot = League(dot_id, year)
+    bob = League(bob_id, year)
     names = [team.team_name for team in dot.teams]
-    return names
+    return jsonify(names)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

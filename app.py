@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from espnff import League
 app = Flask(__name__)
 
@@ -16,8 +16,7 @@ def teams():
     bob = League(bob_id, year)
     dot_names = [team.team_name for team in dot.teams]
     bob_names = [team.team_name for team in bob.teams]
-
-    return jsonify(dot_names + bob_names)
+    return render_template('teams.html', bob_names = bob_names, dot_names = dot_names)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

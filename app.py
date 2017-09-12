@@ -1,6 +1,6 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from espnff import League
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 dot_id = 1507319
 bob_id = 1477590
@@ -22,5 +22,12 @@ def teams():
     bob = League(bob_id, year)
 
     return render_template('teams.html', bob=bob, dot=dot)
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+      <h1>Current Matchups</h1>
+       {% for matchup in bob_scoreboard %}
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <h3>{{matchup.home_team.team_name}}</h3>
+          </div>
+          <div class="col-1">
+            <h3>{{matchup.home_score}}</h3>
+          </div>
+          <div class="col-1">
+            <h3>{{matchup.away_score}}</h3>
+          </div>
+          <div class="col-5">
+            <h3>{{matchup.away_team.team_name}}</h3>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
+
+
+
+
+        <table class="table table-striped">
+          <h2>BOB Division</h2>
+          <thead>
+            <tr>
+              <th>Home Team</th>
+              <th>pts</th>
+              <th>pts</th>
+              <th>Away Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for matchup in bob_scoreboard %}
+            <tr>
+              <td>{{matchup.home_team.team_name}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}} {{matchup.home_team.owner}}) 
+                
+              </td>
+              <td>{{matchup.home_score}}</td>
+              <td>{{matchup.away_score}}</td>
+              <td>
+                {{matchup.away_team.team_name}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}} {{matchup.away_team.owner}})</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <table class="table table-striped">
+          <h2>DOT Division</h2>        
+          <thead>
+            <tr>
+              <th>Home Team</th>
+              <th>pts</th>
+              <th>pts</th>
+              <th>Away Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for matchup in dot_scoreboard %}
+             <tr>
+              <td>{{matchup.home_team.team_name}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}} {{matchup.home_team.owner}}) 
+                
+              </td>
+              <td>{{matchup.home_score}}</td>
+              <td>{{matchup.away_score}}</td>
+              <td>
+                {{matchup.away_team.team_name}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}} {{matchup.away_team.owner}})</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>        
+{% endblock %}

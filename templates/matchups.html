@@ -2,14 +2,14 @@
 {% block content %}
       <h1>Current Matchups</h1>
     
-      <div class="container division">
+      <div class="division">
         <h2>BOB Division</h2>
         {% for matchup in bob_scoreboard %}
         <div class="matchup">
           <div class="row align-items-center">
             <div class="col-5">
               <h4>{{matchup.home_team.team_name}}</h4>
-              <p>{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
+              <p class="text-muted">{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
             </div>
             <div class="col-1">
               <h3 class="score">{{matchup.home_score}}</h3>
@@ -19,21 +19,21 @@
             </div>
             <div class="col-5 away-column">
               <h4>{{matchup.away_team.team_name}}</h4>
-              <p>{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
+              <p class="text-muted">{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
             </div>
           </div>
         </div>
         {% endfor %}
       </div>
       
-      <div class="container division">
+      <div class="division">
         <h2>DOT Division</h2>
         {% for matchup in dot_scoreboard %}  
         <div class="matchup">
           <div class="row align-items-center">
             <div class="col-5">
               <h4>{{matchup.home_team.team_name}}</h4>
-              <p>{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
+              <p class="text-muted">{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
             </div>
             <div class="col-1">
               <h3 class="score">{{matchup.home_score}}</h3>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-5 away-column">
               <h4>{{matchup.away_team.team_name}}</h4>
-              <p>{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
+              <p class="text-muted">{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
             </div>
           </div>
         </div>

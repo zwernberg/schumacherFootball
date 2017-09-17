@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from espnff import League
+from flask_cors import CORS
 import jsonpickle
 app = Flask(__name__, static_folder='static', static_url_path='')
+CORS(app)
 
 dot_id = 1507319
 bob_id = 1477590

@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from espnff import League
+import jsonpickle
 app = Flask(__name__, static_folder='static', static_url_path='')
 
 dot_id = 1507319
@@ -22,6 +23,27 @@ def teams():
     bob = League(bob_id, year)
 
     return render_template('teams.html', bob=bob, dot=dot)
+
+@app.route("/api/v1/matchup")
+def get_matchup():
+    dot = League(dot_id, year)
+    bob = League(bob_id, year)
+    dot_score = dot.scoreboard()
+    bob_score = bob.scoreboard()
+    
+    leagues = {
+        bob: bob,
+        dot: dot
+    }
+    matchups = {
+        dot: dot_score,
+        bob: bob_score
+    }
+    data = {
+        'leagues': leagues,
+        'matchups': matchups
+    }
+    return jsonpickle.encode(data)
 
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')

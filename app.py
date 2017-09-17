@@ -37,13 +37,9 @@ def get_matchup():
         bob: bob,
         dot: dot
     }
-    matchups = {
-        dot: dot_score,
-        bob: bob_score
-    }
     data = {
-        'leagues': leagues,
-        'matchups': matchups
+        'dot_matchup': dot_score,
+        'bob_matchup': bob_score
     }
     return jsonpickle.encode(data)
 

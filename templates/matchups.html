@@ -2,7 +2,7 @@
 {% block content %}
       <h1>Current Matchups</h1>
     
-      <div class="division">
+      <div class="container division">
         <h2>BOB Division</h2>
         {% for matchup in bob_scoreboard %}
         <div class="matchup">
@@ -26,7 +26,7 @@
         {% endfor %}
       </div>
       
-      <div class="division">
+      <div class="container division">
         <h2>DOT Division</h2>
         {% for matchup in dot_scoreboard %}  
         <div class="matchup">

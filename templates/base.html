@@ -8,7 +8,7 @@
 
     <style type="text/css">
       .main-wrapper {
-        max-width: 600px;
+        max-width: 900px;
       }
       h1 {
         text-align: center;
@@ -26,7 +26,8 @@
       }
       .matchup {
         border-top: 1px dotted #bdc3c7;
-        padding: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }
       .score {
         color: #27ae60;
@@ -36,9 +37,14 @@
       }
       @media (max-width: 575px) {
         html {
-          font-size: 8px;
+          font-size: 10px;
         }
       }
+     @media (max-width: 400px) {
+        .col-1, .col-5 {
+          padding: 0px;
+        }     
+      }      
       /* {
         border: 1px dotted green;
       }*/

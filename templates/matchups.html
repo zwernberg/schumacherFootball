@@ -7,17 +7,20 @@
         {% for matchup in bob_scoreboard %}
         <div class="matchup">
           <div class="row align-items-center">
-            <div class="col-5">
+            <div class="col-4">
               <h4>{{matchup.home_team.team_name}}</h4>
               <p class="text-muted">{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
             </div>
             <div class="col-1">
               <h3 class="score">{{matchup.home_score}}</h3>
             </div>
+            <div class="col-2">
+              <h3 class="score text-center">-</h3>
+            </div>
             <div class="col-1">
               <h3 class="score">{{matchup.away_score}}</h3>
             </div>
-            <div class="col-5 col-1-xs away-column">
+            <div class="col-4 col-1-xs away-column">
               <h4>{{matchup.away_team.team_name}}</h4>
               <p class="text-muted">{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
             </div>
@@ -31,17 +34,20 @@
         {% for matchup in dot_scoreboard %}  
         <div class="matchup">
           <div class="row align-items-center">
-            <div class="col-5">
+            <div class="col-4">
               <h4>{{matchup.home_team.team_name}}</h4>
               <p class="text-muted">{{matchup.home_team.owner}} ({{matchup.home_team.wins}}-{{matchup.home_team.losses}})</p>
             </div>
             <div class="col-1">
               <h3 class="score">{{matchup.home_score}}</h3>
             </div>
+            <div class="col-2">
+              <h3 class="score text-center">-</h3>
+            </div>            
             <div class="col-1">
               <h3 class="score">{{matchup.away_score}}</h3>
             </div>
-            <div class="col-5 away-column">
+            <div class="col-4 away-column">
               <h4>{{matchup.away_team.team_name}}</h4>
               <p class="text-muted">{{matchup.away_team.owner}} ({{matchup.away_team.wins}}-{{matchup.away_team.losses}})</p>
             </div>

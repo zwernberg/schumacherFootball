@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from espnff import League
 from flask_cors import CORS
+from operator import itemgetter, attrgetter
 import jsonpickle
 app = Flask(__name__, static_folder='static', static_url_path='')
 CORS(app)
@@ -25,6 +26,25 @@ def teams():
     bob = League(bob_id, year)
 
     return render_template('teams.html', bob=bob, dot=dot)
+
+@app.route("/standings")
+def standings():
+    dot = League(dot_id, year)
+    bob = League(bob_id, year)
+
+    def sort_standings(league):
+        sortedLeague = sorted(league.teams, key=attrgetter('wins', 'points_for'), reverse=True)
+        return sortedLeague
+
+    bob = sort_standings(bob)
+    dot = sort_standings(dot)
+
+    return render_template('standings.html', bob = bob, dot = dot)
+
+@app.route("/history")
+def history():
+
+    return render_template('history.html')
 
 @app.route("/api/v1/matchup")
 def get_matchup():

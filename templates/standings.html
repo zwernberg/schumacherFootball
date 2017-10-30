@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="menu">
+        <h4><a href="/">matchups</a>  /  <a class="menu-active" href="/standings">standings</a>  /  <a href="/history">history</a></h4>
+      </div>
+    
+      <div class="container division">
+        <h2>BOB Division</h2>
+        
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Name</th>
+                <th>Owner</th>
+                <th class="text-center">Record</th>
+                <th class="text-right">Points For</th>
+                <th class="text-right">Points Against</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for team in bob %}
+              <tr>
+                <td><h4>{{team.team_name}}</h4></th>
+                <td><p class="text-muted">{{team.owner}}</p></td>
+                <td class="text-center record">{{team.wins}}-{{team.losses}}</td>
+                <td class="text-right">{{team.points_for}}</td>
+                <td class="text-right">{{team.points_against}}</td>
+              </tr>
+              {% endfor %}
+            </body>
+          </table>
+
+        <h2>DOT Division</h2>
+        
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th>Name</th>
+                <th>Owner</th>
+                <th class="text-center">Record</th>
+                <th class="text-right">Points For</th>
+                <th class="text-right">Points Against</th>                
+              </tr>
+            </thead>
+            <tbody>
+              {% for team in dot %}
+              <tr>
+                <td><h4>{{team.team_name}}</h4></th>
+                <td><p class="text-muted">{{team.owner}}</p></td>
+                <td class="text-center record">{{team.wins}}-{{team.losses}}</td>
+                <td class="text-right">{{team.points_for}}</td>
+                <td class="text-right">{{team.points_against}}</td>
+              </tr>
+              {% endfor %}
+            </body>
+          </table>
+      </div>
+{% endblock %}
